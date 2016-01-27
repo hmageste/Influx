@@ -7,6 +7,11 @@ class CRadialAquifer : public CAquifer
 {
 public:
     CRadialAquifer();
+
+    inline bool isLinear() const	{ return false; }
+
+    void	manualEntry();
+
 private:
     double re; ///< Aquiver extern radius
     double ro; ///< Reservoir radius

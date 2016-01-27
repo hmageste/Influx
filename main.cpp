@@ -8,6 +8,11 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     cout << "Hello World!" << endl;
-    CFetkovich fetkovich;
+
+    CRadialAquifer aquifer;
+    CFetkovich fetkovich( &aquifer );
+    CCarterTracy cartertracy( &aquifer );
+    CEverdingenHurst everdingenHurst( &aquifer );
+
     return 0;
 }
