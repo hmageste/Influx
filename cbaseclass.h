@@ -17,6 +17,7 @@ protected:
     double ro; ///< Reservoir radius
     double cf; ///< Formation compressibility
     double cw; ///< Water compressibility
+    double ct; ///< Total compressibility
     double h;  ///< Aquifer height
     double f;  ///<
     double k;  ///< Water permeability
