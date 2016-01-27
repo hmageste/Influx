@@ -6,6 +6,10 @@ class CBaseClass
 {
 public:
     CBaseClass();
+    ~CBaseClass();
+
+protected:
+private:
 };
 
 #endif // CBASECLASS_H
