@@ -8,6 +8,7 @@ class CEverdingenHurst : public CBaseClass
 {
 public:
     CEverdingenHurst();
+    double calcWe();
 };
 
 #endif // CEVERDINGENHURST_H

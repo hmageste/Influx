@@ -7,7 +7,7 @@ class CFetkovich : public CBaseClass
 {
 public:
     CFetkovich();
-    double  CalcWe() { return 0.0; }
+    double  calcWe();
 };
 
 #endif // CFETKOVICH_H

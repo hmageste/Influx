@@ -4,3 +4,8 @@ CCarterTracy::CCarterTracy()
 {
 
 }
+
+double CCarterTracy::calcWe()
+{
+    return 0.0;
+}

@@ -7,8 +7,7 @@ class CBaseClass
 public:
 		    CBaseClass();
 		    ~CBaseClass();
-
-    virtual double  CalcWe() = 0;
+    virtual double calcWe() = 0;
 
 protected:
 private:
