@@ -12,6 +12,9 @@ public:
 	    CCarterTracy(CRadialAquifer*);
 	    ~CCarterTracy();
 
+    void    setAquifer(CRadialAquifer*);
+    CRadialAquifer* getAquifer() const;
+
     double  calcWe();
 
 protected:

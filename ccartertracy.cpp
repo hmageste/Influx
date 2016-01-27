@@ -13,10 +13,22 @@ CCarterTracy::CCarterTracy()
 
 CCarterTracy::CCarterTracy( CRadialAquifer* aq )
     : aquifer(aq)
+    , red(0.0)
+    , u(0.0)
 {}
 
 CCarterTracy::~CCarterTracy()
 {}
+
+void CCarterTracy::setAquifer( CRadialAquifer* aq )
+{
+    aquifer = aq;
+}
+
+CRadialAquifer* CCarterTracy::getAquifer() const
+{
+    return aquifer;
+}
 
 double CCarterTracy::calcWe()
 {

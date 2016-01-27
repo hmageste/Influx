@@ -8,8 +8,6 @@ public:
     CAquifer();
 
 protected:
-    double re; ///< Aquiver extern radius
-    double ro; ///< Reservoir radius
     double cf; ///< Formation compressibility
     double h;  ///< Aquifer height
     double pi; ///< Aquifer intern pressure
