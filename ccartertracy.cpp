@@ -11,6 +11,10 @@ CCarterTracy::CCarterTracy()
     //u=2*3.14*f*phi*ct*h*(pow(ro,2));
 }
 
+CCarterTracy::CCarterTracy( CRadialAquifer* aq )
+    : aquifer(aq)
+{}
+
 CCarterTracy::~CCarterTracy()
 {}
 

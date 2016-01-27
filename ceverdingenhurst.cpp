@@ -15,6 +15,10 @@ CEverdingenHurst::CEverdingenHurst()
 */
 }
 
+CEverdingenHurst::CEverdingenHurst( CRadialAquifer* aq )
+    : aquifer(aq)
+{}
+
 CEverdingenHurst::~CEverdingenHurst()
 {}
 

@@ -23,6 +23,10 @@ CFetkovich::CFetkovich()
 */
 }
 
+CFetkovich::CFetkovich( CRadialAquifer* aq )
+    : aquifer(aq)
+{}
+
 CFetkovich::~CFetkovich()
 {}
 
