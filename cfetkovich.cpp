@@ -28,12 +28,10 @@ CFetkovich::~CFetkovich()
 
 double CFetkovich::calcWe()
 {
-/*
-    We=0;
-    for (int i=1; i<n; i++)
-    {
-	    We= Wei/pi*(pi*(1-We/Wei)-(p[i-1]+p[i])/2)*(1-pow(2.718,(-(J*pi*deltat[i])/Wei)));
-    }
-*/
+//    we = 0;
+//    for (int i = 1; i < n; i++)
+//    {
+//        we = wei/pi * (1 - we/wei) - (p[i-1] + p[i]/2) * (1 - pow(2.718, (-(j * pi * deltat[i])/wei)));
+//    }
     return 0.0;
 }
