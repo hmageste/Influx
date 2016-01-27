@@ -29,11 +29,10 @@ protected:
     double phi;///< Aquifer porosity
     double we;
     double wei;
-    double u;
     double td;
     double deltapo;
-    double red;
     double j;
+    double ct;
 
 private:
 };

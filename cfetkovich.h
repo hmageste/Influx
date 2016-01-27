@@ -6,8 +6,14 @@
 class CFetkovich : public CBaseClass
 {
 public:
-    CFetkovich();
+	    CFetkovich();
+	    ~CFetkovich();
+
     double  calcWe();
+
+protected:
+private:
+
 };
 
 #endif // CFETKOVICH_H

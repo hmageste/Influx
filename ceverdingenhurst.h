@@ -7,8 +7,14 @@
 class CEverdingenHurst : public CBaseClass
 {
 public:
-    CEverdingenHurst();
-    double calcWe();
+	    CEverdingenHurst();
+	    ~CEverdingenHurst();
+
+    double  calcWe();
+
+protected:
+
+private:
 };
 
 #endif // CEVERDINGENHURST_H

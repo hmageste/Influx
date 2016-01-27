@@ -7,8 +7,14 @@
 class CCarterTracy : public CBaseClass
 {
 public:
-    CCarterTracy();
-    double calcWe();
+	    CCarterTracy();
+	    ~CCarterTracy();
+
+    double  calcWe();
+
+protected:
+    double  red;
+    double  u;
 };
 
 #endif // CCARTERTRACY_H
