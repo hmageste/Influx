@@ -5,8 +5,10 @@
 class CBaseClass
 {
 public:
-    CBaseClass();
-    ~CBaseClass();
+		    CBaseClass();
+		    ~CBaseClass();
+
+    virtual double  CalcWe() = 0;
 
 protected:
 private:
