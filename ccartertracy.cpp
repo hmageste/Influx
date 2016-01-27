@@ -6,9 +6,9 @@ CCarterTracy::CCarterTracy()
     : red(0.0)
     , u(0.0)
 {
-    red=re/ro;
+    //red=re/ro;
 
-    u=2*3.14*f*phi*ct*h*(pow(ro,2));
+    //u=2*3.14*f*phi*ct*h*(pow(ro,2));
 }
 
 CCarterTracy::~CCarterTracy()

@@ -10,6 +10,8 @@ CBaseClass::~CBaseClass()
 
 void CBaseClass::manualEntry()
 {
+    // This information should be asked insede the proper class
+    /*
     std::cout << "Entre com Re: ";
     std::cin >> re;
     std::cout << std::endl;
@@ -41,6 +43,7 @@ void CBaseClass::manualEntry()
     std::cout << "Entre com Re: ";
     std::cin >> re;
     std::cout << std::endl;
+    */
 }
 
 void CBaseClass::fileEntry()
