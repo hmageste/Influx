@@ -5,16 +5,16 @@
 class CData
 {
 public:
-	    CData();
-	    ~CData();
+            CData();
+            ~CData();
     void    ManualEntry();
     void    FileEntry();
 
 protected:
 
 private:
-    double re; ///< aquiver extern radius
-    double ro; ///< reservoir radius
+    double re; ///< Aquiver extern radius
+    double ro; ///< Reservoir radius
     double cf; ///< Formation compressibility
     double cw; ///< Water compressibility
     double h;  ///< Aquifer height
@@ -24,16 +24,16 @@ private:
     double Mi; ///< Water viscosity
     double pi; ///< Aquifer intern pressure
     double po; ///< Aquifer extern pressure
-    double Wd; ///<
+    double wd; ///<
     double t;  ///< Time
     double phi;///< Aquifer porosity
-    double We;
-    double Wei;
-    double U;
+    double we;
+    double wei;
+    double u;
     double td;
     double deltapo;
     double red;
-    double J;
+    double j;
 };
 
 #endif // CDATA_H
