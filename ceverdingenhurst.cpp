@@ -27,9 +27,10 @@ CEverdingenHurst::~CEverdingenHurst()
 double CEverdingenHurst::calcWe( double t )
 {
     const double deltapo = aquifer->getPi() - aquifer->getPo();
-    const double ct = aquifer->getCt();
+    SRock rock = aquifer->getRock();
+    const double ct = rock.cf + aquifer->getFluid().cf;
     const double ro = aquifer->getRo();
-    const double phi = aquifer->getPhi();
+    const double phi = rock.phi;
     const double mi = 1; // aquifer->getFluid().mi;
     td = 0.008362*k*t/(phi*mi*ct);
     return aquifer->getU()*deltapo*aquifer->getWd();

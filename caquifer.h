@@ -17,23 +17,23 @@ public:
 
     double	    getU() const;
     double	    getWd() const;
-    double	    getPhi() const;
     double	    getPi() const;
     double	    getPo() const;
 
+    SFluid	    getFluid() const;
+    SRock	    getRock() const;
+
 protected:
-    double cf;	///< Formation compressibility
     double h;	///< Height (thickness)
     double pi;	///< Initial pressure
     double po;	///< Reservoir contact pressure
-    double phi;	///< Porosity
-    double k;	///< Permeability
     double wd;	///< Dimensionless cumulative water influx
     double we;	///< Cumulative water influx
     double wei; ///< Initial water in place
     double u;	///< Constante de Influxo de Água do Aquífero
 
     SFluid fluid;
+    SRock  rock;
 
     std::vector<double> p; ///< Pressure log
     std::vector<double> t; ///< Time log

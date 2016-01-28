@@ -23,15 +23,15 @@ void CAquifer::manualEntry()
     std::cout << std::endl;
 
     std::cout << "Enter Porosity: ";
-    std::cin >> phi;
+    std::cin >> rock.phi;
     std::cout << std::endl;
 
     std::cout << "Enter Permeability: ";
-    std::cin >> k;
+    std::cin >> rock.k;
     std::cout << std::endl;
 
     std::cout << "Enter Formation's Compressibility: ";
-    std::cin >> cf;
+    std::cin >> rock.cf;
     std::cout << std::endl;
 }
 
@@ -45,9 +45,14 @@ double CAquifer::getWd() const
     return wd; //Unfortunaly it is not that simple to calc this one
 }
 
-double CAquifer::getPhi() const
+SFluid CAquifer::getFluid() const
 {
-    return phi;
+    return fluid;
+}
+
+SRock CAquifer::getRock() const
+{
+    return rock;
 }
 
 double CAquifer::getPi() const
