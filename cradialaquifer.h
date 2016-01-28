@@ -18,7 +18,7 @@ private:
     double ro;	    ///< Reservoir radius
     double theta;   ///< Aquifer circular sector
     double f;	    ///< Reservoir angle (theta/2*pi)
-    double ct;	    ///< total compressibility (ct = cf + cw)
+    double ct;	    ///< Total compressibility (ct = cf + cw)
 };
 
 #endif // CRADIALAQUIFER_H
