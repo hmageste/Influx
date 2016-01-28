@@ -74,12 +74,11 @@ void CBaseClass::assign_values_to_variables(std::vector<double> values)
 {
     cw = values[0];
     ct = values[1];
-    //f = values[2];
-    k = values[3];
-    ko = values[4];
-    Mi = values[5];
-    t = values[6];
-    td = values[7];
-    deltapo = values[8];
-    j = values[9];
+    k = values[2];
+    ko = values[3];
+    Mi = values[4];
+    t = values[5];
+    td = values[6];
+    deltapo = values[7];
+    j = values[8];
 }
