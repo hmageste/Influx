@@ -45,6 +45,11 @@ double CAquifer::getWd() const
     return wd; //Unfortunaly it is not that simple to calc this one
 }
 
+double CAquifer::getPhi() const
+{
+    return phi;
+}
+
 double CAquifer::getPi() const
 {
     return pi;

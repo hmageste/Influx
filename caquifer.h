@@ -16,6 +16,7 @@ public:
 
     double	    getU() const;
     double	    getWd() const;
+    double	    getPhi() const;
     double	    getPi() const;
     double	    getPo() const;
 

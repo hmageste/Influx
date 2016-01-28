@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 
 	if ( method != NULL )
 	{
-	    method->calcWe();
+	    method->calcWe( 0.0 );
 
 	    // Plotar com GnuPlot We x t
 	    /*

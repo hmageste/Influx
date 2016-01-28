@@ -30,7 +30,7 @@ CRadialAquifer* CCarterTracy::getAquifer() const
     return aquifer;
 }
 
-double CCarterTracy::calcWe()
+double CCarterTracy::calcWe( double t )
 {
 /*
     double td_anterior = 0.0;

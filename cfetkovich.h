@@ -11,7 +11,7 @@ public:
 	    CFetkovich(CRadialAquifer*);
 	    ~CFetkovich();
 
-    double  calcWe();
+    double  calcWe(double);
 
 protected:
 

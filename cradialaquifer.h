@@ -13,6 +13,11 @@ public:
 
     void	manualEntry();
 
+    double	getRe() const;
+    double	getRo() const;
+    double	getTheta() const;
+    double	getCt() const;
+
 private:
     double re;	    ///< Aquiver extern radius
     double ro;	    ///< Reservoir radius

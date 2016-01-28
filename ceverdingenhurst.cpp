@@ -24,8 +24,13 @@ CEverdingenHurst::CEverdingenHurst( CRadialAquifer* aq )
 CEverdingenHurst::~CEverdingenHurst()
 {}
 
-double CEverdingenHurst::calcWe()
+double CEverdingenHurst::calcWe( double t )
 {
     const double deltapo = aquifer->getPi() - aquifer->getPo();
+    const double ct = aquifer->getCt();
+    const double ro = aquifer->getRo();
+    const double phi = aquifer->getPhi();
+    const double mi = 1; // aquifer->getFluid().mi;
+    td = 0.008362*k*t/(phi*mi*ct);
     return aquifer->getU()*deltapo*aquifer->getWd();
 }

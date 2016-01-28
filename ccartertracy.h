@@ -15,7 +15,7 @@ public:
     void    setAquifer(CRadialAquifer*);
     CRadialAquifer* getAquifer() const;
 
-    double  calcWe();
+    double  calcWe(double);
 
 protected:
     double  red;

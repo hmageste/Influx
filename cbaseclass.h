@@ -10,7 +10,7 @@ public:
 		    CBaseClass();
 		    ~CBaseClass();
 
-    virtual double  calcWe() = 0;
+    virtual double  calcWe(double) = 0;
     virtual void    manualEntry();
     virtual void    fileEntry();
 

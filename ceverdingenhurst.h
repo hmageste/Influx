@@ -12,7 +12,7 @@ public:
 		    CEverdingenHurst(CRadialAquifer*);
 		    ~CEverdingenHurst();
 
-    double	    calcWe();
+    double	    calcWe(double);
 
 protected:
 

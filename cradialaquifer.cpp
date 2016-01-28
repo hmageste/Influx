@@ -29,3 +29,23 @@ void CRadialAquifer::calcU()
     f = theta/2.0/M_PI;
     u = 2.0*M_PI*f*phi*ct*h*ro*ro;
 }
+
+double CRadialAquifer::getRe() const
+{
+    return re;
+}
+
+double CRadialAquifer::getRo() const
+{
+    return ro;
+}
+
+double CRadialAquifer::getTheta() const
+{
+    return theta;
+}
+
+double CRadialAquifer::getCt() const
+{
+    return cf; // fluid.cw+rock.cf;
+}
