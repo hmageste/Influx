@@ -8,9 +8,9 @@
 class CCarterTracy : public CBaseClass
 {
 public:
-	    CCarterTracy();
-	    CCarterTracy(CRadialAquifer*);
-	    ~CCarterTracy();
+        CCarterTracy();
+        CCarterTracy(CRadialAquifer*);
+        ~CCarterTracy();
 
     void    setAquifer(CRadialAquifer*);
     CRadialAquifer* getAquifer() const;
