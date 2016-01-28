@@ -8,16 +8,17 @@
 class CEverdingenHurst : public CBaseClass
 {
 public:
-	    CEverdingenHurst();
-	    CEverdingenHurst(CRadialAquifer*);
-	    ~CEverdingenHurst();
+		    CEverdingenHurst();
+		    CEverdingenHurst(CRadialAquifer*);
+		    ~CEverdingenHurst();
 
-    double  calcWe();
+    double	    calcWe();
 
 protected:
 
 private:
     CRadialAquifer* aquifer;
+    double	    rd; ///< dimensionless radius
 };
 
 #endif // CEVERDINGENHURST_H

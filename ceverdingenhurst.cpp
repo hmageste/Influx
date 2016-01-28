@@ -1,5 +1,7 @@
 #include "ceverdingenhurst.h"
 
+#include <cmath>
+
 CEverdingenHurst::CEverdingenHurst()
 {
 /*
@@ -24,6 +26,6 @@ CEverdingenHurst::~CEverdingenHurst()
 
 double CEverdingenHurst::calcWe()
 {
-    //We = U*deltapo*Wd(td);
-    return 0.0;
+    const double deltapo = aquifer->getPi() - aquifer->getPo();
+    return aquifer->getU()*deltapo*aquifer->getWd();
 }

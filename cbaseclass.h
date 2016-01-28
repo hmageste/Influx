@@ -15,7 +15,6 @@ public:
 protected:
     double cw; ///< Water compressibility
     double ct; ///< Total compressibility
-    double f;  ///<
     double k;  ///< Water permeability
     double ko; ///< Oil permeability
     double Mi; ///< Water viscosity

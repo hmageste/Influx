@@ -1,6 +1,7 @@
 #include "cradialaquifer.h"
 
 #include <iostream>
+#include <cmath>
 
 CRadialAquifer::CRadialAquifer()
     : CAquifer()
@@ -19,4 +20,12 @@ void CRadialAquifer::manualEntry()
     std::cout << "Enter Ro: ";
     std::cin >> ro;
     std::cout << std::endl;
+}
+
+
+void CRadialAquifer::calcU()
+{
+    ct = cf + 1.0; //ct = cf + cw;
+    f = theta/2.0/M_PI;
+    u = 2.0*M_PI*f*phi*ct*h*ro*ro;
 }

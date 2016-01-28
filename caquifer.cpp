@@ -34,3 +34,23 @@ void CAquifer::manualEntry()
     std::cin >> cf;
     std::cout << std::endl;
 }
+
+double CAquifer::getU() const
+{
+    return u;
+}
+
+double CAquifer::getWd() const
+{
+    return wd; //Unfortunaly it is not that simple to calc this one
+}
+
+double CAquifer::getPi() const
+{
+    return pi;
+}
+
+double CAquifer::getPo() const
+{
+    return po;
+}
