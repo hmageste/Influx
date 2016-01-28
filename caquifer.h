@@ -2,6 +2,7 @@
 #define CAQUIFER_H
 
 #include <vector>
+#include "sfluid.h"
 
 class CAquifer
 {
@@ -31,6 +32,8 @@ protected:
     double we;	///< Cumulative water influx
     double wei; ///< Initial water in place
     double u;	///< Constante de Influxo de Água do Aquífero
+
+    SFluid fluid;
 
     std::vector<double> p; ///< Pressure log
     std::vector<double> t; ///< Time log
