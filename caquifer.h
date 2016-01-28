@@ -26,9 +26,9 @@ protected:
     double po;	///< Reservoir contact pressure
     double phi;	///< Porosity
     double k;	///< Permeability
-    double wd;	///< Influxo Acumulado de Água Adimensional
-    double we;	///< Influxo Acumulado de Água
-    double wei; ///< Influxo Acumulado de Água Inicial
+    double wd;	///< Dimensionless cumulative water influx
+    double we;	///< Cumulative water influx
+    double wei; ///< Initial water in place
     double u;	///< Constante de Influxo de Água do Aquífero
 
     std::vector<double> p; ///< Pressure log
