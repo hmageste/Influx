@@ -7,8 +7,7 @@
 class CBaseClass
 {
 public:
-		    CBaseClass();
-		    ~CBaseClass();
+            CBaseClass();
 
     virtual double  calcWe(double) = 0;
     virtual void    manualEntry();

@@ -6,9 +6,6 @@
 CBaseClass::CBaseClass()
 {}
 
-CBaseClass::~CBaseClass()
-{}
-
 void CBaseClass::manualEntry()
 {
     // This information should be asked inside the proper class
