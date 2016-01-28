@@ -30,7 +30,7 @@ CFetkovich::CFetkovich( CRadialAquifer* aq )
 CFetkovich::~CFetkovich()
 {}
 
-double CFetkovich::calcWe(double t)
+double CFetkovich::calcWe( double t )
 {
 //    we = 0;
 //    for (int i = 1; i < n; i++)

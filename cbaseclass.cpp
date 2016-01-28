@@ -51,7 +51,7 @@ void CBaseClass::fileEntry()
     std::cin >> file_name;
     std::cout << std::endl;
 
-    std::fstream myfile (file_name);
+    std::fstream myfile( file_name.c_str() );
 
     if (myfile.is_open())
     {
