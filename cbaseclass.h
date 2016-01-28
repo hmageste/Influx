@@ -1,6 +1,8 @@
 #ifndef CBASECLASS_H
 #define CBASECLASS_H
 
+#include <string>
+#include <vector>
 
 class CBaseClass
 {
@@ -23,7 +25,13 @@ protected:
     double deltapo;
     double j;
 
+    std::string file_name;
+
 private:
+    double value;
+    std::vector<double> values;
+
+    void assign_values_to_variables(std::vector<double> values);
 };
 
 #endif // CBASECLASS_H
