@@ -19,7 +19,6 @@ public:
 
 protected:
     double  red;
-    double  u;
 
 private:
     CRadialAquifer* aquifer;

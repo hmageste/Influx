@@ -14,20 +14,26 @@ public:
     virtual bool    isLinear() const = 0;
 
     virtual void    manualEntry();
+    virtual void    fileEntry();
 
-    double	    getU() const;
+    virtual double  getU() const = 0; ///< U = Constante de Influxo de Água do Aquífero
+
+    double	    getH() const;
     double	    getPi() const;
     double	    getPo() const;
-
     SFluid	    getFluid() const;
     SRock	    getRock() const;
+
+    void	    setH(double);
+    void	    setPi(double);
+    void	    setPo(double);
+
     Model	    model;
 
 protected:
     double h;	///< Height (thickness)
     double pi;	///< Initial pressure
     double po;	///< Reservoir contact pressure
-    double u;	///< Constante de Influxo de Água do Aquífero
 
     SFluid fluid;
     SRock  rock;

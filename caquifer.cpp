@@ -35,9 +35,23 @@ void CAquifer::manualEntry()
     std::cout << std::endl;
 }
 
-double CAquifer::getU() const
+void CAquifer::fileEntry()
 {
-    return u;
+}
+
+double CAquifer::getH() const
+{
+    return h;
+}
+
+double CAquifer::getPi() const
+{
+    return pi;
+}
+
+double CAquifer::getPo() const
+{
+    return po;
 }
 
 SFluid CAquifer::getFluid() const
@@ -50,12 +64,17 @@ SRock CAquifer::getRock() const
     return rock;
 }
 
-double CAquifer::getPi() const
+void CAquifer::setH( double h_ )
 {
-    return pi;
+    h = h_;
 }
 
-double CAquifer::getPo() const
+void CAquifer::setPi( double pi_ )
 {
-    return po;
+    pi = pi_;
+}
+
+void CAquifer::setPo( double po_ )
+{
+    po = po_;
 }

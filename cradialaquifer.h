@@ -9,20 +9,26 @@ public:
     CRadialAquifer();
 
     inline bool isLinear() const	{ return false; }
-    void	calcU();
 
     void	manualEntry();
+    void	fileEntry();
 
+    double	getCt() const;
+    double	getF() const;  ///< Reservoir angle (theta/2*pi)
     double	getRe() const;
     double	getRo() const;
     double	getTheta() const;
-    double	getCt() const;
+
+    double	getU() const;
+
+    void	setRe(double);
+    void	setRo(double);
+    void	setTheta(double);
 
 private:
     double re;	    ///< Aquiver extern radius
     double ro;	    ///< Reservoir radius
     double theta;   ///< Aquifer circular sector
-    double f;	    ///< Reservoir angle (theta/2*pi)
 };
 
 #endif // CRADIALAQUIFER_H

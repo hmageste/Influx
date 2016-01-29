@@ -4,7 +4,6 @@
 
 CCarterTracy::CCarterTracy()
     : red(0.0)
-    , u(0.0)
 {
     //red=re/ro;
 
@@ -14,7 +13,6 @@ CCarterTracy::CCarterTracy()
 CCarterTracy::CCarterTracy( CRadialAquifer* aq )
     : aquifer(aq)
     , red(0.0)
-    , u(0.0)
 {}
 
 CCarterTracy::~CCarterTracy()
