@@ -40,11 +40,6 @@ double CAquifer::getU() const
     return u;
 }
 
-double CAquifer::getWd() const
-{
-    return wd; //Unfortunaly it is not that simple to calc this one
-}
-
 SFluid CAquifer::getFluid() const
 {
     return fluid;

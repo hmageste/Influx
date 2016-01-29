@@ -5,9 +5,7 @@
 
 CRadialAquifer::CRadialAquifer()
     : CAquifer()
-{
-
-}
+{}
 
 void CRadialAquifer::manualEntry()
 {

@@ -9,27 +9,24 @@ class CAquifer
 public:
 		    CAquifer();
 		    ~CAquifer();
-    enum    model   { infinite, sealed, constant };
+    enum    Model   { Infinite, Sealed, Constant };
 
     virtual bool    isLinear() const = 0;
 
     virtual void    manualEntry();
 
     double	    getU() const;
-    double	    getWd() const;
     double	    getPi() const;
     double	    getPo() const;
 
     SFluid	    getFluid() const;
     SRock	    getRock() const;
+    Model	    model;
 
 protected:
     double h;	///< Height (thickness)
     double pi;	///< Initial pressure
     double po;	///< Reservoir contact pressure
-    double wd;	///< Dimensionless cumulative water influx
-    double we;	///< Cumulative water influx
-    double wei; ///< Initial water in place
     double u;	///< Constante de Influxo de Água do Aquífero
 
     SFluid fluid;
