@@ -69,7 +69,7 @@ double CEverdingenHurst::calcWe( double t )
 
 // Laplace functions
 typedef double (*function)(int,double);
-function I = &cyl_bessel_i, K = &cyl_neumann;
+function I = &cyl_bessel_i, K = &cyl_bessel_k;
 
 double l_infinite_radial_aquifer( double u, double )
 {
