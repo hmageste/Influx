@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstddef>
+#include <cmath>
 #include "ccartertracy.h"
 #include "ceverdingenhurst.h"
 #include "cfetkovich.h"
@@ -11,8 +11,23 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     SFluid water;
-    CRadialAquifer aquifer;
-    // fulfill aquifer information
+    SRock rock;
+
+    water.cf = 0.0;
+    water.viscosity = 1.0;
+    rock.cf = 1e-5;
+    rock.k = 100;
+    rock.phi = 0.2;
+
+    CRadialAquifer aquifer( rock, water );
+
+    aquifer.model = CAquifer::Infinite;
+    aquifer.setH( 1.0 );
+    aquifer.setPi( 100.0 );
+    aquifer.setPo( 90.0 );
+    aquifer.setRe( 10000.0 );
+    aquifer.setRo( 500.0 );
+    aquifer.setTheta( 2*M_PI );
 
     CBaseClass* method = NULL;
 
@@ -25,8 +40,9 @@ int main(int argc, char *argv[])
 	     << "\n3 - Carter-Tracy"
 	     << "\n0 - Sair"
 	     << "\nOpcao numero: ";
-	cin >> resp; cin.get();
+	//cin >> resp; cin.get();
 
+	resp = 1; // Remove after tests are ok
 	switch( resp )
 	{
 	    case 1: method = new CEverdingenHurst( &aquifer );	break;
@@ -38,7 +54,8 @@ int main(int argc, char *argv[])
 
 	if ( method != NULL )
 	{
-	    method->calcWe( 0.0 );
+	    cout << method->calcWe( 50.0 ) << endl;
+	    cin.get(); cin.get();
 
 	    // Plotar com GnuPlot We x t
 	    /*

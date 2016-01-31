@@ -63,7 +63,8 @@ double CEverdingenHurst::calcWe( double t )
     const double ro = aquifer->getRo();
     const double phi = rock.phi;
     const double mi = aquifer->getFluid().viscosity;
-    td = 0.008362*k*t/(phi*mi*ct);
+    const double k = aquifer->getRock().k;
+    const double td = 0.008362*k*t/(phi*mi*ct*ro*ro);
     return aquifer->getU()*deltapo*getWd( td, rd );
 }
 

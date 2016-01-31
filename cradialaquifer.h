@@ -7,6 +7,7 @@ class CRadialAquifer : public CAquifer
 {
 public:
     CRadialAquifer();
+    CRadialAquifer(const SRock&,const SFluid&);
 
     inline bool isLinear() const	{ return false; }
 

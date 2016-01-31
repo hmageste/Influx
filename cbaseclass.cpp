@@ -34,13 +34,4 @@ void CBaseClass::fileEntry()
 
 void CBaseClass::assign_values_to_variables(std::vector<double> values)
 {
-    cw = values[0];
-    ct = values[1];
-    k = values[2];
-    ko = values[3];
-    Mi = values[4];
-    t = values[5];
-    td = values[6];
-    deltapo = values[7];
-    j = values[8];
 }

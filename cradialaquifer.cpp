@@ -7,6 +7,10 @@ CRadialAquifer::CRadialAquifer()
     : CAquifer()
 {}
 
+CRadialAquifer::CRadialAquifer( const SRock& rock_, const SFluid& fluid_ )
+    : CAquifer(rock_,fluid_)
+{}
+
 void CRadialAquifer::manualEntry()
 {
     CAquifer::manualEntry();
@@ -52,4 +56,19 @@ double CRadialAquifer::getTheta() const
 double CRadialAquifer::getU() const
 {
     return 2.0*M_PI*getF()*rock.phi*getCt()*h*ro*ro;
+}
+
+void CRadialAquifer::setRe( double re_ )
+{
+    re = re_;
+}
+
+void CRadialAquifer::setRo( double ro_ )
+{
+    ro = ro_;
+}
+
+void CRadialAquifer::setTheta( double theta_ )
+{
+    theta = theta_;
 }

@@ -8,6 +8,7 @@ class CAquifer
 {
 public:
 		    CAquifer();
+		    CAquifer(const SRock&,const SFluid&);
 		    ~CAquifer();
     enum    Model   { Infinite, Sealed, Constant };
 

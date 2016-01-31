@@ -5,6 +5,11 @@
 CAquifer::CAquifer()
 {}
 
+CAquifer::CAquifer( const SRock& rock_, const SFluid& fluid_ )
+    : rock(rock_)
+    , fluid(fluid_)
+{}
+
 CAquifer::~CAquifer()
 {}
 
@@ -32,6 +37,10 @@ void CAquifer::manualEntry()
 
     std::cout << "Enter Formation's Compressibility: ";
     std::cin >> rock.cf;
+    std::cout << std::endl;
+
+    std::cout << "Enter Fluid's Compressibility: ";
+    std::cin >> fluid.cf;
     std::cout << std::endl;
 }
 

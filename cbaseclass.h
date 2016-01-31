@@ -14,15 +14,6 @@ public:
     virtual void    fileEntry();
 
 protected:
-    double cw; ///< Water compressibility
-    double ct; ///< Total compressibility
-    double k;  ///< Water permeability
-    double ko; ///< Oil permeability
-    double Mi; ///< Water viscosity
-    double t;  ///< Time
-    double td;
-    double deltapo;
-    double j;
 
     std::string file_name;
 
