@@ -8,19 +8,7 @@ using namespace std;
 
 
 CEverdingenHurst::CEverdingenHurst()
-{
-/*
-    ct=cf+cw;
-
-    U=2*3,14*f*phi*ct*h*(pow(ro,2));
-
-    td= (k*t)/(phi*Mi*ct*(pow(L,2)));
-
-    deltapo = pi - po;
-
-    Wd = (k*sqrt(Mi))/(Mi*(pow(Mi,3/2))ko);
-*/
-}
+{}
 
 CEverdingenHurst::CEverdingenHurst( CRadialAquifer* aq )
     : aquifer(aq)
@@ -65,7 +53,9 @@ double CEverdingenHurst::calcWe( double t )
     const double mi = aquifer->getFluid().viscosity;
     const double k = aquifer->getRock().k;
     const double td = 0.008362*k*t/(phi*mi*ct*ro*ro);
-    return aquifer->getU()*deltapo*getWd( td, rd );
+    const double red = aquifer->getRe()/ro;
+    const double wd = getWd( td, red );
+    return aquifer->getU()*deltapo*wd;
 }
 
 // Laplace functions
@@ -108,17 +98,16 @@ int factorial( int n )
 double gavsteh( double (*func)(double,double), double t, double red, int L )
 {
     const int nn2 = L/2;
-    const int nn21 = nn2+1;
-    std::vector<int> v;
+    std::vector<double> v;
 
     for ( int n = 1; n <= L; n++ )
     {
-	int z( 0 );
-	for ( int k = floor( (n+1)/2); k <= min(n,nn2); k++ )
+	double z( 0 );
+	for ( int k = floor((n+1)/2); k <= min(n,nn2); k++ )
 	{
-	    z = z + ( (k^nn2)*factorial(2*k) )/( factorial(nn2-k)*factorial(k)*factorial(k-1)*factorial(n-k)*factorial(2*k - n) );
+	    z = z + ( pow(k,nn2)*factorial(2*k) )/( factorial(nn2-k)*factorial(k)*factorial(k-1)*factorial(n-k)*factorial(2*k - n) );
 	}
-	v.push_back( pow(-1,(n+nn2)*z) );
+	v.push_back( z*pow(-1,(n+nn2)) );
     }
 
     double sum = 0.0;

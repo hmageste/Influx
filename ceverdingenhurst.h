@@ -18,10 +18,6 @@ protected:
 
 private:
     CRadialAquifer* aquifer;
-    double	    rd; ///< dimensionless radius
-    double	    wd;	///< Dimensionless cumulative water influx
-    double	    we;	///< Cumulative water influx
-    double	    wei; ///< Initial water in place
 
     double	    getWd(double,double);
 
