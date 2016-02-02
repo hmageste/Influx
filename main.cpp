@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     SFluid water;
     SRock rock;
 
-    water.cf = 0.0;
+    water.cf = 0; // 42.7e-6; // standard water compressibility
     water.viscosity = 1.0;
     rock.cf = 1e-5;
     rock.k = 100;
@@ -29,6 +29,16 @@ int main(int argc, char *argv[])
     aquifer.setRo( 500.0 );
     aquifer.setTheta( 2*M_PI );
 
+    vector<double> time, pressure;
+    for ( int i = 0; i < 10; i++ )
+    {
+	time.push_back( 100*i );
+	pressure.push_back( 200*i );
+    }
+
+    aquifer.setPressure( pressure );
+    aquifer.setTime( time );
+
     CBaseClass* method = NULL;
 
     int resp = 0;
@@ -42,7 +52,7 @@ int main(int argc, char *argv[])
 	     << "\nOpcao numero: ";
 	//cin >> resp; cin.get();
 
-	resp = 1; // Remove after tests are ok
+	resp = 2; // Remove after tests are ok
 	switch( resp )
 	{
 	    case 1: method = new CEverdingenHurst( &aquifer );	break;

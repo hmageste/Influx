@@ -13,6 +13,8 @@ public:
     enum    Model   { Infinite, Sealed, Constant };
 
     virtual bool    isLinear() const = 0;
+    virtual double  getArea() const = 0;
+    double	    getVolume() const;
 
     virtual void    manualEntry();
     virtual void    fileEntry();
@@ -24,10 +26,14 @@ public:
     double	    getPo() const;
     SFluid	    getFluid() const;
     SRock	    getRock() const;
+    void	    getHistoric(std::vector<double>&,std::vector<double>&);
 
     void	    setH(double);
     void	    setPi(double);
     void	    setPo(double);
+
+    void	    setPressure(std::vector<double>);
+    void	    setTime(std::vector<double>);
 
     Model	    model;
 
@@ -39,8 +45,8 @@ protected:
     SFluid fluid;
     SRock  rock;
 
-    std::vector<double> p; ///< Pressure log
-    std::vector<double> t; ///< Time log
+    std::vector<double> pressure;   ///< Pressure historic
+    std::vector<double> time;	    ///< Time historic
 };
 
 #endif // CAQUIFER_H

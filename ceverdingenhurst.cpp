@@ -66,7 +66,6 @@ double l_infinite_radial_aquifer( double u, double )
 {
     const double arg1 = sqrt(u);
     return K(1,arg1) / ( pow(u,3.0/2.0)*K(0,arg1) );
-    //return cyl_neumann( 1, sqrt(u) )/( pow(u,3.0/2.0)*cyl_neumann( 0, sqrt(u) ) );
     //return bessel_k1( sqrt(u), BOOST_MATH_DOMAIN_ERROR_POLICY )/( pow(u,3.0/2.0)*bessel_k0( sqrt(u), BOOST_MATH_DOMAIN_ERROR_POLICY ) );
 }
 

@@ -48,6 +48,11 @@ void CAquifer::fileEntry()
 {
 }
 
+double CAquifer::getVolume() const
+{
+    return getArea()*h;
+}
+
 double CAquifer::getH() const
 {
     return h;
@@ -73,6 +78,12 @@ SRock CAquifer::getRock() const
     return rock;
 }
 
+void CAquifer::getHistoric( std::vector<double>& t, std::vector<double>& p )
+{
+    t = time;
+    p = pressure;
+}
+
 void CAquifer::setH( double h_ )
 {
     h = h_;
@@ -86,4 +97,14 @@ void CAquifer::setPi( double pi_ )
 void CAquifer::setPo( double po_ )
 {
     po = po_;
+}
+
+void CAquifer::setPressure( std::vector<double> p )
+{
+    pressure = p;
+}
+
+void CAquifer::setTime( std::vector<double> t )
+{
+    time = t;
 }

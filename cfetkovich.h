@@ -18,6 +18,8 @@ protected:
 private:
     CRadialAquifer* aquifer;
 
+    double  getJ() const;
+
 };
 
 #endif // CFETKOVICH_H

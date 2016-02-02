@@ -28,6 +28,11 @@ void CRadialAquifer::fileEntry()
 {
 }
 
+double CRadialAquifer::getArea() const
+{
+    return M_PI*(re*re-ro*ro);
+}
+
 double CRadialAquifer::getCt() const
 {
     return rock.cf+fluid.cf;

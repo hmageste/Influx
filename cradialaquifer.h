@@ -14,6 +14,7 @@ public:
     void	manualEntry();
     void	fileEntry();
 
+    double	getArea() const;
     double	getCt() const;
     double	getF() const;  ///< Reservoir angle (theta/2*pi)
     double	getRe() const;
