@@ -3,6 +3,8 @@
 
 #include <string>
 #include <vector>
+#include <map>
+#include "sfluid.h"
 
 class CBaseClass
 {
@@ -13,15 +15,27 @@ public:
     virtual void    manualEntry();
     virtual void    fileEntry();
 
+    void setCw(double);
+
 protected:
 
     std::string file_name;
 
 private:
     double value;
-    std::vector<double> values;
+    std::string assing, variable;
 
-    void assign_values_to_variables(std::vector<double> values);
+    typedef std::map<std::string, double>::iterator it_expressions;
+    std::map<std::string, double> expressions;
+
+    typedef void (CBaseClass::*MPF)(double);
+    typedef std::map<std::string, MPF>::iterator it_functions;
+    std::map<std::string, MPF> functions;
+
+//    Just for tests
+    SRock rock;
+
+    void assign_values_to_variables(std::map<std::string, double>);
 };
 
 #endif // CBASECLASS_H
