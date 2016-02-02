@@ -13,28 +13,30 @@ int main(int argc, char *argv[])
     SFluid water;
     SRock rock;
 
-    water.cf = 0; // 42.7e-6; // standard water compressibility
-    water.viscosity = 1.0;
-    rock.cf = 1e-5;
+    water.cf = 42.7e-6; // standard water compressibility
+    water.viscosity = 0.3;
+    rock.cf = 56.9e-6;
     rock.k = 100;
     rock.phi = 0.2;
 
     CRadialAquifer aquifer( rock, water );
 
-    aquifer.model = CAquifer::Infinite;
-    aquifer.setH( 1.0 );
-    aquifer.setPi( 100.0 );
-    aquifer.setPo( 90.0 );
-    aquifer.setRe( 10000.0 );
-    aquifer.setRo( 500.0 );
+    aquifer.model = CAquifer::Sealed;
+    aquifer.setH( 18.3 );
+    aquifer.setPi( 246.13 );
+    aquifer.setPo( 0.0 ); // Not constant in this example
+    aquifer.setRe( 6096.0 );
+    aquifer.setRo( 762.0 );
     aquifer.setTheta( 2*M_PI );
 
-    vector<double> time, pressure;
-    for ( int i = 0; i < 10; i++ )
-    {
-	time.push_back( 100*i );
-	pressure.push_back( 200*i );
-    }
+    // Only C++11
+    //vector<double> time = { 0, 100, 200, 300, 400, 500 };
+    //vector<double> pressure = { 246.13, 245.43, 244.44, 243.18, 242.19, 240.51};
+
+    const double time_[] = { 0, 100, 200, 300, 400, 500 };
+    const double pressure_[] = { 246.13, 245.43, 244.44, 243.18, 242.19, 240.51};
+    vector<double> time( time_, time_+6 );
+    vector<double> pressure( pressure_, pressure_+6 );
 
     aquifer.setPressure( pressure );
     aquifer.setTime( time );
@@ -64,7 +66,7 @@ int main(int argc, char *argv[])
 
 	if ( method != NULL )
 	{
-	    cout << method->calcWe( 50.0 ) << endl;
+	    cout << method->calcWe( 500.0 ) << endl;
 	    cin.get(); cin.get();
 
 	    // Plotar com GnuPlot We x t

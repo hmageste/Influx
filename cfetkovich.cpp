@@ -4,6 +4,7 @@
 #include <cmath>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 
 using namespace std;
 
@@ -47,17 +48,16 @@ double CFetkovich::calcWe( double t_ )
     vector<double> t, p;
     aquifer->getHistoric( t, p );
 
-    const int n = t.size();
-    vector<double> deltat( n-1 );
-    for ( int i = 0; i < n-1; i++ )
-	deltat[i] = t[i+1] - t[i];
-    //transform( t.begin(), t.end(), t.begin(), deltat.begin(), minus<double>() );
+    vector<double> deltat( t.size(), 0.0 );
+    adjacent_difference( t.begin(), t.end(), deltat.begin() );
 
-    double we( 0.0 );
-//    for ( int i = 0; i < n; i++ )
-//    {
-//	we = wei/pi * (1 - we/wei) - (p[i-1] + p[i]/2) * (1 - pow(2.718, (-(getJ() * pi * deltat[i])/wei)));
-//    }
+    double we( 0.0 ), pmedaq( pi ), pmedcont( pi );
+    for ( int i = 1; i < t.size(); i++ )
+    {
+	pmedcont = (p[i-1] + p[i])/2.0;
+	we += wei/pi * ( pmedaq - pmedcont) * (1 - pow(2.718, (-(getJ() * pi * deltat[i])/wei)));
+	pmedaq = pi*(1-we/wei);
+    }
 
     return we;
 }
