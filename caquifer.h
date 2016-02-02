@@ -2,6 +2,8 @@
 #define CAQUIFER_H
 
 #include <vector>
+#include <string>
+#include <map>
 #include "sfluid.h"
 
 class CAquifer
@@ -17,7 +19,7 @@ public:
     double	    getVolume() const;
 
     virtual void    manualEntry();
-    virtual void    fileEntry();
+    virtual void    fileEntry(const std::string&);
 
     virtual double  getU() const = 0; ///< U = Constante de Influxo de Água do Aquífero
 
@@ -37,6 +39,17 @@ public:
 
     Model	    model;
 
+    double value;
+    std::string assing, variable;
+
+    typedef std::map<std::string, double>::iterator it_expressions;
+    std::map<std::string, double> expressions;
+
+    typedef void (CAquifer::*MPF)(double);
+    typedef std::map<std::string, MPF>::iterator it_functions;
+    std::map<std::string, MPF> functions;
+    void assign_values_to_variables(std::map<std::string, double>);
+
 protected:
     double h;	///< Height (thickness)
     double pi;	///< Initial pressure
@@ -47,6 +60,9 @@ protected:
 
     std::vector<double> pressure;   ///< Pressure historic
     std::vector<double> time;	    ///< Time historic
+
+private:
+    void setCf(double);
 };
 
 #endif // CAQUIFER_H
