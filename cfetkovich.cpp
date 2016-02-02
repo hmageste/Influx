@@ -41,24 +41,27 @@ CFetkovich::~CFetkovich()
 
 double CFetkovich::calcWe( double t_ )
 {
-    const double wi = aquifer->getVolume()*aquifer->getRock().phi;
-    const double pi = aquifer->getPi();
-    const double wei = aquifer->getCt()*wi*pi;
-
-    vector<double> t, p;
-    aquifer->getHistoric( t, p );
-
-    vector<double> deltat( t.size(), 0.0 );
-    adjacent_difference( t.begin(), t.end(), deltat.begin() );
-
-    double we( 0.0 ), pmedaq( pi ), pmedcont( pi );
-    for ( int i = 1; i < t.size(); i++ )
+    double we( 0.0 );
+    if ( !aquifer->isLinear() )
     {
-	pmedcont = (p[i-1] + p[i])/2.0;
-	we += wei/pi * ( pmedaq - pmedcont) * (1 - pow(2.718, (-(getJ() * pi * deltat[i])/wei)));
-	pmedaq = pi*(1-we/wei);
-    }
+	const double wi = aquifer->getVolume()*aquifer->getRock().phi;
+	const double pi = aquifer->getPi();
+	const double wei = aquifer->getCt()*wi*pi;
 
+	vector<double> t, p;
+	aquifer->getHistoric( t, p );
+
+	vector<double> deltat( t.size(), 0.0 );
+	adjacent_difference( t.begin(), t.end(), deltat.begin() );
+
+	double pmedaq( pi ), pmedcont( pi );
+	for ( int i = 1; i < t.size(); i++ )
+	{
+	    pmedcont = (p[i-1] + p[i])/2.0;
+	    we += wei/pi * ( pmedaq - pmedcont) * (1 - pow(2.718, (-(getJ() * pi * deltat[i])/wei)));
+	    pmedaq = pi*(1-we/wei);
+	}
+    }
     return we;
 }
 
