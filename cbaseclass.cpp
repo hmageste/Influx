@@ -3,24 +3,21 @@
 #include <iostream>
 #include <fstream>
 
+//#include <vector>
+
 CBaseClass::CBaseClass()
 {}
 
 void CBaseClass::manualEntry()
 {}
 
-void CBaseClass::fileEntry()
+void CBaseClass::fileEntry( const std::string& file_name )
 {
-    // Open and read a file
-    std::cout << "Entre com o nome do arquivo: ";
-    std::cin >> file_name;
-    std::cout << std::endl;
+    std::ifstream fin( file_name.c_str() );
 
-    std::fstream myfile( file_name.c_str() );
-
-    if ( myfile.is_open() )
+    if ( fin.is_open() )
     {
-        while( myfile >> variable >> assing >> value )
+	while( fin >> variable >> assing >> value )
             expressions.insert( std::make_pair( variable, value ) );
 
         assign_values_to_variables( expressions );
@@ -31,7 +28,7 @@ void CBaseClass::fileEntry()
         return;
     }
 
-    myfile.close();
+    fin.close();
 }
 
 void CBaseClass::setCw( double cw_ )

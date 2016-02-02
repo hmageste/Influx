@@ -2,7 +2,6 @@
 #define CBASECLASS_H
 
 #include <string>
-#include <vector>
 #include <map>
 #include "sfluid.h"
 
@@ -13,13 +12,11 @@ public:
 
     virtual double  calcWe(double) = 0;
     virtual void    manualEntry();
-    virtual void    fileEntry();
+    virtual void    fileEntry(const std::string&);
 
     void setCw(double);
 
 protected:
-
-    std::string file_name;
 
 private:
     double value;
