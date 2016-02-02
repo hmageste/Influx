@@ -10,6 +10,7 @@ class CEverdingenHurst : public CBaseClass
 public:
 		    CEverdingenHurst();
 		    CEverdingenHurst(CRadialAquifer*);
+
 		    ~CEverdingenHurst();
 
     double	    calcWe(double);

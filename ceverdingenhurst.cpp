@@ -45,16 +45,20 @@ double CEverdingenHurst::getWd( double td, double red )
 
 double CEverdingenHurst::calcWe( double t )
 {
-    const double deltapo = aquifer->getPi() - aquifer->getPo();
-    SRock rock = aquifer->getRock();
-    const double ct = rock.cf + aquifer->getFluid().cf;
-    const double ro = aquifer->getRo();
-    const double phi = rock.phi;
-    const double mi = aquifer->getFluid().viscosity;
-    const double k = aquifer->getRock().k;
-    const double td = 0.008362*k*t/(phi*mi*ct*ro*ro);
-    const double red = aquifer->getRe()/ro;
-    const double wd = getWd( td, red );
+    double deltapo, wd;
+    if ( !aquifer->isLinear() )
+    {
+	deltapo = aquifer->getPi() - aquifer->getPo();
+	SRock rock = aquifer->getRock();
+	const double ct = rock.cf + aquifer->getFluid().cf;
+	const double ro = aquifer->getRo();
+	const double phi = rock.phi;
+	const double mi = aquifer->getFluid().viscosity;
+	const double k = aquifer->getRock().k;
+	const double td = 0.008362*k*t/(phi*mi*ct*ro*ro);
+	const double red = aquifer->getRe()/ro;
+	wd = getWd( td, red );
+    }
     return aquifer->getU()*deltapo*wd;
 }
 
