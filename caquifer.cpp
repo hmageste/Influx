@@ -65,15 +65,17 @@ void CAquifer::fileEntry( const std::string& file_name )
     fin.close();
 }
 
-void CAquifer::setCf( double cf_ )
+void CAquifer::setcf( double cf_ )
 {
     fluid.cf = cf_;
 }
 
+#define mMapFunctionTo(attribute) \
+functions.insert( std::make_pair( #attribute, &CAquifer::set##attribute ) );
+
 void CAquifer::assign_values_to_variables( std::map<std::string, double> expressions )
 {
-    for(it_expressions expression = expressions.begin(); expression != expressions.end(); expression++)
-        functions.insert( std::make_pair( expression->first, &CAquifer::setCf ) );
+    mMapFunctionTo(cf);
 
     for(it_functions function = functions.begin(); function != functions.end(); function++)
     {

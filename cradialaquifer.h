@@ -12,7 +12,7 @@ public:
     inline bool isLinear() const	{ return false; }
 
     void	manualEntry();
-    void	fileEntry();
+    void	fileEntry(const std::string&);
 
     double	getArea() const;
     double	getCt() const;

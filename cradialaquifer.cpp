@@ -24,8 +24,9 @@ void CRadialAquifer::manualEntry()
     std::cout << std::endl;
 }
 
-void CRadialAquifer::fileEntry()
+void CRadialAquifer::fileEntry(const std::string& file_name)
 {
+    CAquifer::fileEntry(file_name);
 }
 
 double CRadialAquifer::getArea() const

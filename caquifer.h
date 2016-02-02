@@ -42,7 +42,6 @@ public:
     double value;
     std::string assing, variable;
 
-    typedef std::map<std::string, double>::iterator it_expressions;
     std::map<std::string, double> expressions;
 
     typedef void (CAquifer::*MPF)(double);
@@ -62,7 +61,7 @@ protected:
     std::vector<double> time;	    ///< Time historic
 
 private:
-    void setCf(double);
+    void setcf(double);
 };
 
 #endif // CAQUIFER_H
