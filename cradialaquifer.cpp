@@ -24,9 +24,13 @@ void CRadialAquifer::manualEntry()
     std::cout << std::endl;
 }
 
-void CRadialAquifer::fileEntry(const std::string& file_name)
+void CRadialAquifer::setVariables( std::map<std::string,double>& tokens )
 {
-    CAquifer::fileEntry(file_name);
+    CAquifer::setVariables( tokens );
+
+    setRe( tokens["re"] );
+    setRo( tokens["ro"] );
+    setTheta( tokens["theta"] );
 }
 
 double CRadialAquifer::getArea() const

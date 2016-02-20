@@ -1,7 +1,10 @@
 #include "caquifer.h"
 
 #include <iostream>
+#include <string>
 #include <fstream>
+#include <sstream>
+#include <map>
 
 CAquifer::CAquifer()
 {}
@@ -45,6 +48,48 @@ void CAquifer::manualEntry()
     std::cout << std::endl;
 }
 
+void CAquifer::setVariables( std::map<std::string,double>& tokens )
+{
+    setH( tokens["h"] );
+    setPi( tokens["pi"] );
+    setPo( tokens["po"] );
+    rock.k = tokens["rock.k"];
+    rock.cf = tokens["rock.cf"];
+    rock.phi = tokens["rock.phi"];
+    fluid.cf = tokens["fluid.cf"];
+    fluid.viscosity = tokens["fluid.mi"];
+}
+
+void CAquifer::fileEntry( const std::string& file_name )
+{
+    std::ifstream fin( file_name.c_str() );
+    if ( !fin.is_open() )
+    {
+	std::cerr << "File not found" << std::endl;
+	return;
+    }
+
+    std::string line;
+    std::vector<std::string> lines;
+    while ( getline(fin,line,';') )
+	lines.push_back( line );
+
+    fin.close();
+
+    std::map<std::string, double> tokens;
+
+    std::string token, equalsign; double value;
+    for ( int i = 0; i < lines.size(); i++ )
+    {
+	std::istringstream iss( lines[i] );
+	iss >> token >> equalsign >> value;
+	tokens.insert( std::make_pair(token,value) );
+    }
+
+    setVariables( tokens );
+}
+
+/*
 void CAquifer::fileEntry( const std::string& file_name )
 {
     std::ifstream fin( file_name.c_str() );
@@ -79,14 +124,14 @@ void CAquifer::assign_values_to_variables( std::map<std::string, double> express
 
     for(it_functions function = functions.begin(); function != functions.end(); function++)
     {
-        if ( functions.find( function->first ) != functions.end() )
-        {
-            MPF fp = functions[function->first];
-            (this->*fp)( expressions[function->first] );
-        }
+	if ( functions.find( function->first ) != functions.end() )
+	{
+	    MPF fp = functions[function->first];
+	    (this->*fp)( expressions[function->first] );
+	}
     }
 }
-
+*/
 
 double CAquifer::getVolume() const
 {

@@ -12,7 +12,6 @@ public:
     inline bool isLinear() const	{ return false; }
 
     void	manualEntry();
-    void	fileEntry(const std::string&);
 
     double	getArea() const;
     double	getCt() const;
@@ -26,6 +25,9 @@ public:
     void	setRe(double);
     void	setRo(double);
     void	setTheta(double);
+
+protected:
+    void	setVariables(std::map<std::string,double>&);
 
 private:
     double re;	    ///< Aquiver extern radius

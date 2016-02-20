@@ -39,6 +39,7 @@ public:
 
     Model	    model;
 
+/*
     double value;
     std::string assing, variable;
 
@@ -48,8 +49,11 @@ public:
     typedef std::map<std::string, MPF>::iterator it_functions;
     std::map<std::string, MPF> functions;
     void assign_values_to_variables(std::map<std::string, double>);
+*/
 
 protected:
+    virtual void    setVariables(std::map<std::string,double>&);
+
     double h;	///< Height (thickness)
     double pi;	///< Initial pressure
     double po;	///< Reservoir contact pressure
@@ -61,7 +65,7 @@ protected:
     std::vector<double> time;	    ///< Time historic
 
 private:
-    void setcf(double);
+    //void setcf(double);
 };
 
 #endif // CAQUIFER_H
