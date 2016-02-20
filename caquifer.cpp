@@ -1,10 +1,8 @@
 #include "caquifer.h"
 
 #include <iostream>
-#include <string>
 #include <fstream>
 #include <sstream>
-#include <map>
 
 CAquifer::CAquifer()
 {}
@@ -88,50 +86,6 @@ void CAquifer::fileEntry( const std::string& file_name )
 
     setVariables( tokens );
 }
-
-/*
-void CAquifer::fileEntry( const std::string& file_name )
-{
-    std::ifstream fin( file_name.c_str() );
-
-    if ( fin.is_open() )
-    {
-    while( fin >> variable >> assing >> value )
-            expressions.insert( std::make_pair( variable, value ) );
-
-        assign_values_to_variables( expressions );
-    }
-    else
-    {
-        std::cerr << "Não é possível abrir o arquivo especificado";
-        return;
-    }
-
-    fin.close();
-}
-
-void CAquifer::setcf( double cf_ )
-{
-    fluid.cf = cf_;
-}
-
-#define mMapFunctionTo(attribute) \
-functions.insert( std::make_pair( #attribute, &CAquifer::set##attribute ) );
-
-void CAquifer::assign_values_to_variables( std::map<std::string, double> expressions )
-{
-    mMapFunctionTo(cf);
-
-    for(it_functions function = functions.begin(); function != functions.end(); function++)
-    {
-	if ( functions.find( function->first ) != functions.end() )
-	{
-	    MPF fp = functions[function->first];
-	    (this->*fp)( expressions[function->first] );
-	}
-    }
-}
-*/
 
 double CAquifer::getVolume() const
 {

@@ -39,18 +39,6 @@ public:
 
     Model	    model;
 
-/*
-    double value;
-    std::string assing, variable;
-
-    std::map<std::string, double> expressions;
-
-    typedef void (CAquifer::*MPF)(double);
-    typedef std::map<std::string, MPF>::iterator it_functions;
-    std::map<std::string, MPF> functions;
-    void assign_values_to_variables(std::map<std::string, double>);
-*/
-
 protected:
     virtual void    setVariables(std::map<std::string,double>&);
 
