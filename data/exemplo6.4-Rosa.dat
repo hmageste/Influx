@@ -7,5 +7,5 @@ cf = 56.9e-6;
 ro = 762;
 re = 6096;
 pi = 180;
-aquifer = sealed;
+model_type = 1; //model_name = sealed;
 

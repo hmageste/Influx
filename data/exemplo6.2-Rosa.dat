@@ -7,5 +7,5 @@ cf = 5e-5;
 ro = 800;
 re = 5000;
 pi = 180;
-aquifer = constant;
+model_type = 2; //model_name = constant;
 

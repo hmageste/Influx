@@ -20,6 +20,7 @@ public:
 
     virtual void    manualEntry();
     virtual void    fileEntry(const std::string&);
+    void	    loadHistory(const std::string&);
 
     virtual double  getU() const = 0; ///< U = Constante de Influxo de Água do Aquífero
 
@@ -31,6 +32,8 @@ public:
     void	    getHistoric(std::vector<double>&,std::vector<double>&);
 
     void	    setH(double);
+    void	    setModel(const std::string&);
+    void	    setModel(int);
     void	    setPi(double);
     void	    setPo(double);
 

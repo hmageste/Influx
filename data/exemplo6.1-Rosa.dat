@@ -7,5 +7,5 @@ cw = 42.7e-6;
 ro = 500;
 re = 5000;
 pi = 100;
-aquifer = inifite;
+model_type = 0; //model_name = inifite;
 

@@ -51,6 +51,7 @@ void CAquifer::setVariables( std::map<std::string,double>& tokens )
     setH( tokens["h"] );
     setPi( tokens["pi"] );
     setPo( tokens["po"] );
+    setModel( tokens["model_type"] );
     rock.k = tokens["rock.k"];
     rock.cf = tokens["rock.cf"];
     rock.phi = tokens["rock.phi"];
@@ -85,6 +86,29 @@ void CAquifer::fileEntry( const std::string& file_name )
     }
 
     setVariables( tokens );
+}
+
+void CAquifer::loadHistory( const std::string& file_name )
+{
+    std::ifstream fin( file_name.c_str() );
+    if ( !fin.is_open() )
+    {
+	std::cerr << "File not found" << std::endl;
+	return;
+    }
+
+    std::string header1, header2;
+    fin >> header1 >> header2;
+
+    double data1, data2;
+    while ( fin )
+    {
+	fin >> data1 >> data2;
+	time.push_back( header1 == "t" ? data1 : data2 );
+	pressure.push_back( header1 == "t" ? data2 : data1 );
+    }
+
+    fin.close();
 }
 
 double CAquifer::getVolume() const
@@ -126,6 +150,21 @@ void CAquifer::getHistoric( std::vector<double>& t, std::vector<double>& p )
 void CAquifer::setH( double h_ )
 {
     h = h_;
+}
+
+void CAquifer::setModel( const std::string& model_name )
+{
+    if ( model_name == "Infinite" || model_name == "infinite" )
+	model = CAquifer::Infinite;
+    else if ( model_name == "Sealed" || model_name == "sealed" )
+	model = CAquifer::Sealed;
+    else if ( model_name == "Constant" || model_name == "constant" )
+	model = CAquifer::Constant;
+}
+
+void CAquifer::setModel( int model_type )
+{
+    model = static_cast<Model>( model_type );
 }
 
 void CAquifer::setPi( double pi_ )
