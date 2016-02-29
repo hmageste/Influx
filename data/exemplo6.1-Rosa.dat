@@ -1,0 +1,11 @@
+phi = 0.2;
+k = 100;
+h = 1;
+mi = 1;
+cf = 57.3e-6;
+cw = 42.7e-6;
+ro = 500;
+re = 5000;
+pi = 100;
+aquifer = inifite;
+
