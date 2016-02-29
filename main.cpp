@@ -19,7 +19,7 @@ int main( int argc, char *argv[] )
     string data_file( "exemplo6.1-Rosa.dat" );
     //cin >> data_file;
 
-    raquifer.fileEntry( data_file );
+    raquifer.loadData( data_file );
 
     cout << "Entry aquifer's history file: ";
     string history_file( "exemplo6.1-Rosa.his" );

@@ -59,7 +59,7 @@ void CAquifer::setVariables( std::map<std::string,double>& tokens )
     fluid.viscosity = tokens["fluid.mi"];
 }
 
-void CAquifer::fileEntry( const std::string& file_name )
+void CAquifer::loadData( const std::string& file_name )
 {
     std::ifstream fin( file_name.c_str() );
     if ( !fin.is_open() )

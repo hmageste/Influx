@@ -19,7 +19,7 @@ public:
     double	    getVolume() const;
 
     virtual void    manualEntry();
-    virtual void    fileEntry(const std::string&);
+    void	    loadData(const std::string&);
     void	    loadHistory(const std::string&);
 
     virtual double  getU() const = 0; ///< U = Constante de Influxo de Água do Aquífero
