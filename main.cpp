@@ -18,26 +18,12 @@ int main( int argc, char *argv[] )
     cout << "Entry aquifer data file: ";
     string data_file( "exemplo6.1-Rosa.dat" );
     //cin >> data_file;
-
     raquifer.loadData( data_file );
 
     cout << "Entry aquifer's history file: ";
-    string history_file( "exemplo6.1-Rosa.his" );
+    string history_file( "exemplo6.1-Rosa.ods" );
     //cin >> history_file;
-
     raquifer.loadHistory( history_file );
-
-    // Only C++11
-    //vector<double> time = { 0, 100, 200, 300, 400, 500 };
-    //vector<double> pressure = { 246.13, 245.43, 244.44, 243.18, 242.19, 240.51};
-
-    const double time_[] = { 0, 100, 200, 300, 400, 500 };
-    const double pressure_[] = { 246.13, 245.43, 244.44, 243.18, 242.19, 240.51};
-    vector<double> time( time_, time_+6 );
-    vector<double> pressure( pressure_, pressure_+6 );
-
-    raquifer.setPressure( pressure );
-    raquifer.setTime( time );
 
     CBaseClass* method = NULL;
 
@@ -52,7 +38,7 @@ int main( int argc, char *argv[] )
 	     << "\nOpcao numero: ";
 	//cin >> resp; cin.get();
 
-	resp = 2; // Remove after tests are ok
+	resp = 1; // Remove after tests are ok
 	switch( resp )
 	{
 	    case 1: method = new CEverdingenHurst( &raquifer );	break;
