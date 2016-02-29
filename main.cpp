@@ -24,6 +24,7 @@ int main( int argc, char *argv[] )
     string history_file( "exemplo6.1-Rosa.ods" );
     //cin >> history_file;
     raquifer.loadHistory( history_file );
+    raquifer.setPo( 90.0 );
 
     CBaseClass* method = NULL;
 
@@ -50,7 +51,7 @@ int main( int argc, char *argv[] )
 
 	if ( method != NULL )
 	{
-	    cout << method->calcWe( 500.0 ) << endl;
+	    cout << method->calcWe( 50.0 ) << endl;
 	    cin.get(); cin.get();
 
 	    // Plotar com GnuPlot We x t

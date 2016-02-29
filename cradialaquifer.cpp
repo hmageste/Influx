@@ -30,12 +30,12 @@ void CRadialAquifer::setVariables( std::map<std::string,double>& tokens )
 
     setRe( tokens["re"] );
     setRo( tokens["ro"] );
-    setTheta( tokens["theta"] );
+    setF( tokens["f"] );
 }
 
 double CRadialAquifer::getArea() const
 {
-    return M_PI*(re*re-ro*ro);
+    return M_PI*(re*re-ro*ro)*fraction;
 }
 
 double CRadialAquifer::getCt() const
@@ -45,7 +45,7 @@ double CRadialAquifer::getCt() const
 
 double CRadialAquifer::getF() const
 {
-    return theta/2.0/M_PI;
+    return fraction;
 }
 
 double CRadialAquifer::getRe() const
@@ -60,7 +60,7 @@ double CRadialAquifer::getRo() const
 
 double CRadialAquifer::getTheta() const
 {
-    return theta;
+    return 2*M_PI*fraction;
 }
 
 double CRadialAquifer::getU() const
@@ -78,7 +78,7 @@ void CRadialAquifer::setRo( double ro_ )
     ro = ro_;
 }
 
-void CRadialAquifer::setTheta( double theta_ )
+void CRadialAquifer::setF( double fraction_ )
 {
-    theta = theta_;
+    fraction = fraction_;
 }

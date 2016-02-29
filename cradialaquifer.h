@@ -24,7 +24,7 @@ public:
 
     void	setRe(double);
     void	setRo(double);
-    void	setTheta(double);
+    void	setF(double);
 
 protected:
     void	setVariables(std::map<std::string,double>&);
@@ -32,7 +32,7 @@ protected:
 private:
     double re;	    ///< Aquiver extern radius
     double ro;	    ///< Reservoir radius
-    double theta;   ///< Aquifer circular sector
+    double fraction;   ///< fraction of aquifer circular sector
 };
 
 #endif // CRADIALAQUIFER_H

@@ -1,11 +1,12 @@
-phi = 0.2;
-k = 150;
+rock.phi = 0.2;
+rock.k = 150;
+rock.cf = 5e-5;
+fluid.mi = 1;
+fluid.cf = 4e-5;
 h = 15;
-mi = 1;
-cw = 4e-5;
-cf = 5e-5;
 ro = 800;
 re = 5000;
 pi = 180;
+f = 1; // fraction of a cylindric reservoir: theta = 2*pi*f
 model_type = 2; //model_name = constant;
 
