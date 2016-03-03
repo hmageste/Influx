@@ -107,19 +107,14 @@ double gavsteh( double (*func)(double,double), double t, double red, int L )
     {
 	double z( 0.0 );
 	for ( int k = floor((n+1)/2); k <= min(n,nn2); k++ )
-	{
-	    z = z + ( pow(k,nn2)*factorial(2*k) )/( factorial(nn2-k)*factorial(k)*factorial(k-1)*factorial(n-k)*factorial(2*k - n) );
-	}
+	    z += ( pow(k,nn2)*factorial(2*k) )/( factorial(nn2-k)*factorial(k)*factorial(k-1)*factorial(n-k)*factorial(2*k - n) );
 	v.push_back( z*pow(-1,(n+nn2)) );
     }
 
     double sum( 0.0 );
     double ln2_on_t = log(2.0) / t;
     for ( int n = 1; n <= L; n++ )
-    {
-	const double p = n*ln2_on_t;
-	sum = sum + v[n-1]*func(p,red);
-    }
+        sum += v[n-1]*func(n*ln2_on_t,red);
 
     return sum*ln2_on_t;
 }
