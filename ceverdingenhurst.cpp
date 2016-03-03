@@ -94,7 +94,7 @@ int factorial( int n )
     if ( n < 2 )
 	return 1;
 
-    return n*factorial(--n);
+    return n*factorial(n-1);
 }
 
 // Numerical Inverse Laplace Transform using Gaver-Stehfest method
