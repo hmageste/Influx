@@ -70,8 +70,11 @@ void CAquifer::loadData( const std::string& file_name )
 
     std::string line;
     std::vector<std::string> lines;
-    while ( getline(fin,line,';') )
+    while ( getline(fin,line) )
+    {
+        line = line.substr( 0, line.find(';') );
 	lines.push_back( line );
+    }
 
     fin.close();
 
