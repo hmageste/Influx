@@ -54,9 +54,6 @@ protected:
 
     std::vector<double> pressure;   ///< Pressure historic
     std::vector<double> time;	    ///< Time historic
-
-private:
-    //void setcf(double);
 };
 
 #endif // CAQUIFER_H

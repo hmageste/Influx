@@ -16,12 +16,12 @@ int main( int argc, char *argv[] )
     raquifer.model = CAquifer::Sealed;
 
     cout << "Entry aquifer data file: ";
-    string data_file( "exemplo6.1-Rosa.dat" );
+    string data_file( "exemplo6.4-Rosa.dat" );
     //cin >> data_file;
     raquifer.loadData( data_file );
 
     cout << "Entry aquifer's history file: ";
-    string history_file( "exemplo6.1-Rosa.ods" );
+    string history_file( "exemplo6.4-Rosa.ods" );
     //cin >> history_file;
     raquifer.loadHistory( history_file );
     raquifer.setPo( 90.0 );
