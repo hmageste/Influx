@@ -7,6 +7,6 @@ h = 18.3;
 ro = 762.0;
 re = 6096.0;
 pi = 180.0;
-f = 1.0; // fraction of a cylindric reservoir: theta = 2*pi*f;
+f = 1.0; // fraction of a cylindric reservoir: theta = 2*pi*f
 model_type = 1; //model_name = sealed;
 
